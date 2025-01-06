@@ -212,9 +212,7 @@ void displayAllUsers() {
                users[i].id, users[i].name, users[i].email, users[i].phone, users[i].status);
     }
     printf("---------------------------------------------------------------------------------\n");
-
-    printf("\nPress any key to return to Admin Menu... ");
-    getchar(); 
+ 
 }
 
 void searchUser() {
@@ -241,8 +239,6 @@ void searchUser() {
         printf("Khong Tim Thay Nguoi Dung '%s'\n", searchName);
     }
 
-    printf("\nPress any key to return to Admin Menu...");
-    getchar(); 
 }
 
 void searchUserById() {
@@ -268,9 +264,7 @@ void searchUserById() {
     if (!found) {
         printf("Khong Tim Thay Nguoi Dung ID %s\n", searchId);
     }
-
-    printf("\nPress any key to return to Admin Menu...");
-    getchar(); 
+ 
 }
 
 int isUnique(char id[], char email[], char phone[]) {
@@ -282,6 +276,7 @@ int isUnique(char id[], char email[], char phone[]) {
     return 1;
 }
 
+//gioi han nhap
 int isUserInfoValid(char id[], char name[], char phone[]) {
     if (strlen(id) < 3 || 
         strlen(name) <= 3 ||
@@ -342,8 +337,8 @@ void toggleUserStatus() {
 void sortUsersByName() {
     int choice;
     printf("\n*** Sort Users by Name ***\n");
-    printf("1. Sort A to Z (Ascending)\n");
-    printf("2. Sort Z to A (Descending)\n");
+    printf("1. Sort A to Z \n");
+    printf("2. Sort Z to A \n");
     printf("Choose your option: ");
     scanf("%d", &choice);
 
@@ -352,7 +347,7 @@ void sortUsersByName() {
         for (int i = 0; i < userCount - 1; i++) {
             for (int j = i + 1; j < userCount; j++) {
                 if (strcmp(users[i].name, users[j].name) > 0) {
-                    // Hoán d?i các user[i] và user[j]
+                    // Hoan doi cac user[i] và user[j]
                     User temp = users[i];
                     users[i] = users[j];
                     users[j] = temp;
@@ -365,7 +360,7 @@ void sortUsersByName() {
         for (int i = 0; i < userCount - 1; i++) {
             for (int j = i + 1; j < userCount; j++) {
                 if (strcmp(users[i].name, users[j].name) < 0) {
-                    // Hoán d?i các user[i] và user[j]
+                    // Hoan doi cac user[i] và user[j]
                     User temp = users[i];
                     users[i] = users[j];
                     users[j] = temp;
